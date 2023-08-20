@@ -12,6 +12,8 @@ Currently there are some assumptions:
 - ~~DML should check if the original record is there before proceed.~~
 - Exception handling is broken, need to have better try catch block. 
 - ~~Config to connect to database~~
+- Fix service, currently it is broken due to some interface changes
+- Unit Tests
 
 
 #### Good to have
