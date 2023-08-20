@@ -18,7 +18,7 @@ class EntryDao:
     @abstractmethod
     def insert_new_rec(self, rec: str):
         pass
-    
+
     @abstractmethod
     def delete_rec(self, id: str):
         pass
@@ -26,4 +26,3 @@ class EntryDao:
     @abstractmethod
     def update_rec(self, id: str, update: dict):
         pass
-    

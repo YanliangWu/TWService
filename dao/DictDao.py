@@ -1,7 +1,7 @@
-
 from dao.EntryDao import EntryDao
 from models.TwEntry import TWEntryRecord
-from copy import copy 
+from copy import copy
+
 
 class DictDao(EntryDao):
     def __init__(self):
@@ -16,7 +16,7 @@ class DictDao(EntryDao):
         """
         self.data.append(rec)
         return rec
-    
+
     def update_rec(self, id: str, update: dict):
         """
         Update specific record by id, it's O(n) ops but this is just some test code

@@ -17,7 +17,8 @@ app = Flask(__name__)
 
 # Set up database connection
 
-dao:EntryDao = DictDao()
+dao: EntryDao = DictDao()
+
 
 @app.route("/")
 def root():
@@ -34,10 +35,10 @@ def root():
 @app.route("/v1/get_all_data")
 def get_all_data():
     """
-    Retrieve all the data 
+    Retrieve all the data
     """
     app.logger.info(f"IP address: {request.remote_addr}, API: get_all_data")
-    
+
     try:
         response = dao.get_all_rec()
         response = jsonify(response)
@@ -54,7 +55,7 @@ def insert_data():
     data = request.get_json()
     if not data:
         return jsonify({"message": "Missing Payload"}), 400
-    
+
     if not data.get("username"):
         return jsonify({"message": "Missing required field: username"}), 400
 
@@ -77,14 +78,14 @@ def update_data():
 
     if not data:
         return jsonify({"message": "Missing Payload"}), 400
-    
+
     if not target_id:
         return jsonify({"message": "Missing required field: id"}), 400
-    
+
     result = dao.update_rec(target_id, data)
     if not result.get("success"):
         return jsonify(result), 400
-    
+
     return jsonify(result.get("payload")), 200
 
 
@@ -97,10 +98,10 @@ def delete_data():
     id = data.get("id")
     if not data:
         return jsonify({"message": "Missing Payload"}), 400
-    
+
     if not id:
         return jsonify({"message": "Missing required field: id"}), 400
-    
+
     result = dao.delete_rec(id)
     return jsonify(result), 200
 

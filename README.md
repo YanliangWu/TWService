@@ -8,16 +8,19 @@ Currently there are some assumptions:
 
 
 ## TODO LIST
-- Entitlement Check
-- DML should check if the original record is there before proceed.
+- Python timestamp -> MySQL timestamp
+- ~~DML should check if the original record is there before proceed.~~
 - Exception handling is broken, need to have better try catch block. 
-- We should consider keep the update entry by using knowledge time model 
+- Config to connect to database
+
+
+#### Good to have
+- Keep the update history by using knowledge time model 
+- Entitlement Check
 - Containerlize this and move to k8s
 - WSGI for service
-- Better service handler
-- Config to connect to database
 - MySQL connection
-- CORS? (Not necessary)
+- CORS?
 
 
 ## Effort Log
