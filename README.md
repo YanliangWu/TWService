@@ -11,7 +11,7 @@ Currently there are some assumptions:
 - Python timestamp -> MySQL timestamp
 - ~~DML should check if the original record is there before proceed.~~
 - Exception handling is broken, need to have better try catch block. 
-- Config to connect to database
+- ~~Config to connect to database~~
 
 
 #### Good to have
@@ -26,12 +26,11 @@ Currently there are some assumptions:
 ## Effort Log
 - Aug 18: 11:30 - 1:40AM (Aug19)
   - Create service, create a in memory DAO for testing
-- Aug 20: 11:30 - 2:15 AM (Aug21)
-  - Create cli, Mysql connector
+- Aug 20: 11:30 - 3:00 AM (Aug21)
+  - Create CLI, Mysql connector, formatting, documents, bug fixes.
 
 ## Swagger Doc
-
-Check swagger.json for swagger document. 
+Check swagger.json for swagger document, this is only for the service only. 
 
 
 ## Connect to the project host
