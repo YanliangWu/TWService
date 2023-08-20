@@ -21,7 +21,15 @@ class TWEntryRecord:
         return cls(id=str(new_uuid()), timestamp=time.time(), username=d.get("username"), description=d.get("description"))
     
     @classmethod
+    def create_entry(cls, username: str, description: str) -> "TWEntryRecord":
+        return cls(id=str(new_uuid()), timestamp=time.time(), username=username, description=description)
+
+    @classmethod
     def replicate_record(cls, existed: "TWEntryRecord", replace: dict):
         return cls(id=existed.id, timestamp=time.time(), username=replace.get("username") or existed.username, description=replace.get("description") or existed.description)
 
     dict = asdict
+
+    def to_dml_tuple(self):
+        return (self.id, self.timestamp, self.username, self.description)
+    

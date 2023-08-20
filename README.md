@@ -8,6 +8,7 @@ Currently there are some assumptions:
 
 
 ## TODO LIST
+- Entitlement Check
 - Exception handling is broken.
 - We should consider keep the update entry by using knowledge time model 
 - Containerlize this and move to k8s
@@ -15,8 +16,15 @@ Currently there are some assumptions:
 - Better service handler
 - Config to connect to database
 - MySQL connection
+- CORS? (Not necessary)
 
 
 ## Effort Log
 - Aug 18: 11:30 - 1:40AM (Aug19)
   - Create service, create a in memory DAO for testing
+- Aug 20: 11:30 - 2:00 AM (Aug21)
+  - Create cli, Mysql connector
+
+## Swagger Doc
+
+Check swagger.json for swagger document. 

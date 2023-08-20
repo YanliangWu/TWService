@@ -1,9 +1,9 @@
 
 from dao.EntryDao import EntryDao
 from models.TwEntry import TWEntryRecord
+from copy import copy 
 
-
-class CacheDao(EntryDao):
+class DictDao(EntryDao):
     def __init__(self):
         self.data: list[TWEntryRecord] = []
 
@@ -35,6 +35,7 @@ class CacheDao(EntryDao):
         """
         for i in range(len(self.data)):
             if self.data[i].id == id:
+                rec = copy(self.data[i])
                 del self.data[i]
-                return {"success": True, "messsage": "Success"}
+                return {"success": True, "deleted": rec}
         return {"success": False, "messsage": "Unable to find id from data"}

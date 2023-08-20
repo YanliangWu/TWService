@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "16ba514e-d034-4dd5-8767-f6b868e8892d",
+		"name": "TWService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Insert New Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Test\",\n    \"username\": \"andrew\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/insert_data",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"insert_data"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "wu",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "randomstuff",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/v1/get_all_data",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"get_all_data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Data by ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"c963750b-a4ef-498b-8199-d625f6968641\",\n    \"description\": \"Test2\",\n    \"username\": \"andrew\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/update_data",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"update_data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Data by ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"1bb08c3a-f26a-4098-ae15-73c44ab685d1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/delete_data",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"delete_data"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:5000",
+			"type": "default"
+		}
+	]
+}

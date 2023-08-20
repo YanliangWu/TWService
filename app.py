@@ -7,7 +7,7 @@ from flask import Flask, jsonify, request
 import socket
 import os
 import atexit
-from dao.CacheDao import CacheDao
+from dao.DictDao import DictDao
 
 from dao.EntryDao import EntryDao
 from models.TwEntry import TWEntryRecord
@@ -17,14 +17,8 @@ app = Flask(__name__)
 
 # Set up database connection
 
-dao:EntryDao = CacheDao()
+dao:EntryDao = DictDao()
 
-def _require_field_missing(field_name:str, data:dict):
-    if data.get(field_name) == None:
-        return jsonify({"message": f"Missing required field: {field_name}"}), 400
-    else:
-        return None
-    
 @app.route("/")
 def root():
     return jsonify(
@@ -100,15 +94,15 @@ def delete_data():
     Delete existed record by id, if id not found, then return error message
     """
     data = request.get_json()
+    id = data.get("id")
     if not data:
         return jsonify({"message": "Missing Payload"}), 400
     
-    if not data.get("id"):
+    if not id:
         return jsonify({"message": "Missing required field: id"}), 400
     
-    rec = TWEntryRecord.replicate_record(data)
-    dao.insert_new_rec(rec)
-    return jsonify(rec.dict()), 200
+    result = dao.delete_rec(id)
+    return jsonify(result), 200
 
 
 @atexit.register
