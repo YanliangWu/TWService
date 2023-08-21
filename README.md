@@ -6,14 +6,14 @@ Currently there are some assumptions:
 - We require user to specify the id to update/delete the record.
 - When update record, fields that user did not set, will not be updated. 
 
-
 ## TODO LIST
 - Python timestamp -> MySQL timestamp
 - ~~DML should check if the original record is there before proceed.~~
 - Exception handling is broken, need to have better try catch block. 
 - ~~Config to connect to database~~
 - Fix service, currently it is broken due to some interface changes
-- Unit Tests
+- Unit Tests (made something but should be better)
+- Credentials embedded in config file, should base64 it and put it to a vault. 
 
 
 #### Good to have
