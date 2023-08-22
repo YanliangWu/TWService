@@ -14,6 +14,9 @@ Currently there are some assumptions:
 - Fix service, currently it is broken due to some interface changes
 - Unit Tests (made something but should be better)
 - Credentials embedded in config file, should base64 it and put it to a vault. 
+- Add CLI help function, also input validation is missing. 
+- gitignore.. 
+
 
 
 #### Good to have
@@ -30,6 +33,14 @@ Currently there are some assumptions:
   - Create service, create a in memory DAO for testing
 - Aug 20: 11:30 - 3:00 AM (Aug21)
   - Create CLI, Mysql connector, formatting, documents, bug fixes.
+- Aug 21: 7:00 - 8:00 
+  - Setting up subinterfacee in centos in oracle cloud
+    - Confirm it won't work as it limits multiple VNIC in this host. 
+    - Ended up with creating a new AWS account and created a EC2 instsance
+- Aug 22: 9:00 - 10:00
+  - Setting up the subinterface, mysql in EC2 instance. 
+  - Some small fixes and setting up the repo. 
+  - Also added some small fixes. 
 
 ## Swagger Doc
 Check swagger.json for swagger document, this is only for the service only. 
